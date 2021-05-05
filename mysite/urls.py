@@ -19,6 +19,5 @@ from django.urls import path ,include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('blog.urls')),
-    path('machine_learning/',include('machine_learning.urls'),
-    
-]
+    path('machine_learning/',include('machine_learning.urls')),
+    ]
