@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path ,include
+import machine_learning.views as file_upload
+
 
 urlpatterns = [
+    path('success/url/',file_upload.success),
     path('admin/', admin.site.urls),
     path('',include('blog.urls')),
     path('ml/',include('machine_learning.urls')),
