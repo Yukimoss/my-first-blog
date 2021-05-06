@@ -14,7 +14,7 @@ def file_upload(request):
             handle_uploaded_file(request.FILES['file'])
             file_obj = request.FILES['file']
             sys.stderr.write(file_obj.name + "\n")
-            return HttpResponseRedirect('/success/url/')
+            return HttpResponseRedirect('/success/url')
     else:
         form = UploadFileForm()
     return render(request, 'machine_learning/upload.html', {'form': form})
@@ -24,7 +24,8 @@ def file_upload(request):
 def handle_uploaded_file(file_obj):
     sys.stderr.write("*** handle_uploaded_file *** aaa ***\n")
     sys.stderr.write(file_obj.name + "\n")
-    file_path = 'media/documents/' + file_obj.name 
+    # file_path = 'media/documents/' + file_obj.name 
+    file_path = file_obj.name 
     sys.stderr.write(file_path + "\n")
     with open(file_path, 'wb+') as destination:
         for chunk in file_obj.chunks():
