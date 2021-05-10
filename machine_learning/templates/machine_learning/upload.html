@@ -5,12 +5,18 @@
 <title>ファイルアップロード</title>
 </head>
 <body>
-    <h1>ファイルをアップロード</h1>
-    <form method="POST" enctype="multipart/form-data">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">アップロード</button>
-    </form>
+    {% if user.is_authenticated %}
+        {% if user.is_staff %}
+            <h1>ファイルをアップロード</h1>
+            <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">アップロード</button>
+            </form>
+        {% endif %}
+    {% else %}
+        <h1>ログインしてください！</h1>
+    {% endif %}
 <hr />
 Dec/26/2018<p />
 </body>
