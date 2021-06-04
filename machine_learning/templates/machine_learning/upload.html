@@ -11,9 +11,9 @@
             <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">アップロード</button>
+            <button type="submit">判定する</button>
             </form>
-            <button type="button">判定する</button>
+            <!-- <button type="button">判定する</button> -->
         {% endif %}
     {% else %}
         <h1>ログインしてください！</h1>
