@@ -19,7 +19,7 @@ import machine_learning.views as file_upload
 
 
 urlpatterns = [
-    path('success/url/',file_upload.success),
+    # path('success/url/',file_upload.success),
     path('admin/', admin.site.urls),
     path('',include('blog.urls')),
     path('ml/',include('machine_learning.urls')),
