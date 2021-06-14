@@ -34,8 +34,8 @@ def file_upload(request):
 def handle_uploaded_file(file_obj):
     sys.stderr.write("*** handle_uploaded_file *** aaa ***\n")
     sys.stderr.write(file_obj.name + "\n")
-    # file_path = 'imada.pythonanywhere.com/media/documents/' + file_obj.name 
-    file_path = file_obj.name 
+    file_path = 'imada.pythonanywhere.com/media/documents/' + file_obj.name 
+    # file_path = file_obj.name 
     sys.stderr.write(file_path + "\n")
     with open(file_path, 'wb+') as destination:
         for chunk in file_obj.chunks():
