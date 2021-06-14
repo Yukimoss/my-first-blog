@@ -7,7 +7,7 @@ import pickle
 import sys
 import io
 
-loaded_model = pickle.load(open('finalized_model.sav', 'rb'))
+loaded_model = pickle.load(open('imada.pythonanywhere.com/finalized_model.sav', 'rb'))
 
 # ------------------------------------------------------------------
 def file_upload(request):
