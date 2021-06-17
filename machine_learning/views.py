@@ -20,7 +20,8 @@ def file_upload(request):
             file_obj = request.FILES['file']
             sys.stderr.write(file_obj.name + "\n")
             # df = pd.read_csv(io.BytesIO(file_obj))
-            df = pd.read_csv(file_obj.name)
+            file_path = 'imada.pythonanywhere.com/media/documents/' + file_obj.name 
+            df = pd.read_csv(file_path)
             result = loaded_model.predict(df)
             print(result)
             str_out = result
